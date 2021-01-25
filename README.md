@@ -1,6 +1,5 @@
-<p align="center">
-    <a href="https://trino.io/"><img alt="Trino Logo" src=".github/homepage.png" /></a>
-</p>
+##CEBBank-Trino
+
 <p align="center">
     <b>Trino is a fast distributed SQL query engine for big data analytics.</b>
 </p>
