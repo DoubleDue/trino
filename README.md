@@ -1,4 +1,4 @@
-##CEBBank-Trino
+##C***k-Trino
 
 <p align="center">
     <b>Trino is a fast distributed SQL query engine for big data analytics.</b>
@@ -37,6 +37,11 @@ Trino is a standard Maven project. Simply run the following command from the
 project root directory:
 
     ./mvnw clean install -DskipTests
+    or
+    mvn （-T2C）clean install -DskipTests
+    or
+    mvn package -pl presto-postgresql -Pproduct -am -DskipTests 如果module4依赖于module1/2 会同时编译module1/2
+    mvn package -pl presto-postgresql -Pproduct -amd -DskipTests 如果module1/2依赖moudle4 编译完4会继续编译1/2
 
 On the first build, Maven downloads all the dependencies from the internet
 and caches them in the local repository (`~/.m2/repository`), which can take a
@@ -90,7 +95,7 @@ IntelliJ, using `$MODULE_DIR$` accomplishes this automatically.
 
 Start the CLI to connect to the server and run SQL queries:
 
-    client/trino-cli/target/trino-cli-*-executable.jar
+   java -jar client/trino-cli/target/trino-cli-*-executable.jar --server localhost:8080 --catalog example
 
 Run a query to see the nodes in the cluster:
 
