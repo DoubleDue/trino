@@ -40,8 +40,8 @@ project root directory:
     or
     mvn （-T2C）clean install -DskipTests
     or
-    mvn package -pl presto-postgresql -Pproduct -am -DskipTests 如果module4依赖于module1/2 会同时编译module1/2
-    mvn package -pl presto-postgresql -Pproduct -amd -DskipTests 如果module1/2依赖moudle4 编译完4会继续编译1/2
+    mvn package -pl plugin/trino-postgresql -Pproduct -am -DskipTests 如果module依赖于module1/2 会同时编译module1/2
+    mvn package -pl plugin/trino-gaussdb -Pproduct -amd -DskipTests 如果module1/2依赖moudle 编译完会继续编译1/2
 
 On the first build, Maven downloads all the dependencies from the internet
 and caches them in the local repository (`~/.m2/repository`), which can take a

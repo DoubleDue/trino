@@ -110,6 +110,7 @@
         <module>plugin/trino-druid</module>
         <module>plugin/trino-elasticsearch</module>
         <module>plugin/trino-example-http</module>
+        <module>plugin/trino-gaussdb</module>
         <module>plugin/trino-geospatial</module>
         <module>plugin/trino-google-sheets</module>
         <module>plugin/trino-hive</module>
@@ -229,6 +230,13 @@
             <dependency>
                 <groupId>io.trino</groupId>
                 <artifactId>trino-example-http</artifactId>
+                <version>${project.version}</version>
+                <type>zip</type>
+            </dependency>
+
+            <dependency>
+                <groupId>io.trino</groupId>
+                <artifactId>trino-gaussdb</artifactId>
                 <version>${project.version}</version>
                 <type>zip</type>
             </dependency>
