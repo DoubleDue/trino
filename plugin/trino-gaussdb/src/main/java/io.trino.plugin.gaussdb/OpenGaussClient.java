@@ -47,7 +47,6 @@ import static io.trino.plugin.jdbc.StandardColumnMappings.timestampWriteFunction
 import static io.trino.plugin.jdbc.StandardColumnMappings.tinyintWriteFunction;
 import static io.trino.plugin.jdbc.StandardColumnMappings.varbinaryWriteFunction;
 import static io.trino.plugin.postgresql.GaussdbTypeUtils.getArrayElementPgTypeName;
-import static io.trino.spi.StandardErrorCode.NOT_SUPPORTED;
 import static io.trino.spi.type.TimestampType.TIMESTAMP_MILLIS;
 import static io.trino.spi.type.TimestampWithTimeZoneType.TIMESTAMP_WITH_TIME_ZONE;
 import static io.trino.spi.type.VarbinaryType.VARBINARY;
@@ -88,7 +87,7 @@ public class OpenGaussClient
             String elementDataType = toWriteMapping(session, elementType).getDataType();
             return WriteMapping.blockMapping(elementDataType + "[]", arrayWriteFunction(session, elementType, getArrayElementPgTypeName(session, this, elementType)));
         }
-        throw new TrinoException(NOT_SUPPORTED, "Unsupported column type: " + type.getDisplayName());
+        return super.toWriteMapping(session, type);
     }
 
     @Override

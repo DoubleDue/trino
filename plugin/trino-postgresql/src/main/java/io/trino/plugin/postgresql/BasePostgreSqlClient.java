@@ -34,6 +34,7 @@ import io.trino.plugin.jdbc.JdbcTypeHandle;
 import io.trino.plugin.jdbc.LongWriteFunction;
 import io.trino.plugin.jdbc.SliceWriteFunction;
 import io.trino.plugin.jdbc.StatsCollecting;
+import io.trino.plugin.jdbc.WriteMapping;
 import io.trino.spi.TrinoException;
 import io.trino.spi.connector.ConnectorSession;
 import io.trino.spi.connector.ConnectorTableMetadata;
@@ -233,6 +234,12 @@ public abstract class BasePostgreSqlClient
             }
             return arrayColumnDimensions;
         }
+    }
+
+    @Override
+    public WriteMapping toWriteMapping(ConnectorSession session, Type type)
+    {
+        return super.legacyToWriteMapping(session, type);
     }
 
     @Override
